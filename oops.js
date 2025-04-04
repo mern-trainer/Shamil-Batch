@@ -41,7 +41,14 @@ class Person{
     }
 }
 
-const person = new Person("Shamil")
+class Shamil extends Person{
+
+}
+
+// child class -> Shamil
+// parent class -> Person
+
+const person = new Shamil("Shamil")
 
 person.display(10)
 
@@ -54,6 +61,43 @@ console.log(person);
 // Encapsulation -> Binding of properties and methods into a single unit.,
 //                  access modifiers -> public, private, protected, default
 // in js -> public, private
-// Inheritance ->
-// Abstraction -> 
-// Polymorphism -> 
+// Abstraction -> Hinding implementation
+// Inheritance -> extends methods and properties from one class to another.
+// Polymorphism -> Many forms ->
+// overloading -> Same method and diff. parameters
+// overriding -> Same method and same parameters
+
+class Calculator{
+    constructor() {
+        console.log("Instance created");
+    }
+
+    sum(a, b) {
+        const s = a + b
+        return s
+    }
+
+}
+
+class Add extends Calculator{
+    sum(a, b, c) { // overloading
+        const s = a + b + c
+        return s
+    }
+
+    // @overriding
+    sum(s1, s2) {
+        const s = s1 + " " + s2
+        return s
+    }
+
+    callParent(a, b) {
+        return super.sum(a, b)
+    }
+}
+
+const add = new Add()
+
+console.log(add.sum(10, 20, 40));
+
+console.log(add.callParent(10,100));
