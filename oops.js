@@ -26,8 +26,10 @@
 // PascalCase -> 
 class Person{
 
+    #name;
+
     constructor(name) {
-        this.name = name
+        this.#name = name
     }
 
     display(number) {
@@ -35,7 +37,7 @@ class Person{
     }
 
     displayName() {
-        console.log(this.name);
+        console.log(this.#name);
     }
 }
 
@@ -46,3 +48,12 @@ person.display(10)
 person.displayName()
 
 console.log(person);
+
+// 4 pillers
+
+// Encapsulation -> Binding of properties and methods into a single unit.,
+//                  access modifiers -> public, private, protected, default
+// in js -> public, private
+// Inheritance ->
+// Abstraction -> 
+// Polymorphism -> 
