@@ -99,3 +99,82 @@ const res2 = users.map((user) => {
 })
 
 console.log(res2);
+
+// callback -> Function which is passed as an argument to another function.
+
+// array map -> Array Manipulation -> to update an existing array elements
+
+
+// async -> non blocking -> same time multiple tasks
+
+// sync -> blocking -> line by line execution ->
+
+// promise, async await
+
+// promise -> to handle asynchronous operations
+
+console.log("Hi");
+// setTimeout(() => {
+//     console.log("Display after 5 seconds");
+// }, 5000) // 5000ms == 5s
+console.log("Hello");
+
+// promise states -> pending -> fulfilled -> rejected -> settled promise
+
+const promiseFunc = () => new Promise((resolve, reject) => {
+    setTimeout(() => {
+        reject("Display after 5 seconds")
+    }, 5000);
+}) // constructor function -> Memory allocation
+
+// promiseFunc().then((response) => { // success
+//     console.log("success:",response);
+// }).catch((error) => { // failure
+//     console.log("failure:",error);
+// })
+
+// async await -> to handle asynchronous operations
+
+// async function handle() {
+    
+// }
+
+const handlePromise = async () => {
+    try {
+        const response = await promiseFunc()
+        console.log(response);
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+handlePromise()
+
+// application
+
+// API -> Application Programming Interface
+
+// api -> server to server , client to server
+
+// json -> Javascript Object Notation
+
+// object -> collection of key value pairs
+
+'{"name": "Shamil", "age": 21}'
+// XMLDocument, json, text, html 
+
+const fetchData = async () => {
+    try {
+        const response = await fetch("https://jsonplaceholder.typicode.com/todos")
+        const res = await response.json()
+        for (let i = 0; i<res.length; i++) {
+            const todo = res[i]
+            const list = document.getElementById("list")
+            list.innerHTML = list.innerHTML + "<div>"+todo.title+" - "+todo.id+"</div>"
+        }
+    } catch (error) {
+        console.log(error);   
+    }
+}
+
+fetchData()
