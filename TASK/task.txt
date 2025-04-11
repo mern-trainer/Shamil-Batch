@@ -8,4 +8,4 @@
 3. Implement a cat image generator using the API at https://api.thecatapi.com/v1/images/search
     a. Display a random cat image when the button is clicked
 
-Note: All tasks should utilize async/await and include memoization.
+Note: All tasks should utilize async/await and handle errors.
