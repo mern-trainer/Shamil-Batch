@@ -1,0 +1,11 @@
+1. Implement a joke generator using the API at https://v2.jokeapi.dev/joke/Any
+    a. Display a random joke when the button is clicked
+
+2. Implement a generator for random users using the API at https://randomuser.me/api/
+    a. Display a random user when the button is clicked
+    b. Display a random user when the page is refreshed
+
+3. Implement a cat image generator using the API at https://api.thecatapi.com/v1/images/search
+    a. Display a random cat image when the button is clicked
+
+Note: All tasks should utilize async/await and include memoization.
