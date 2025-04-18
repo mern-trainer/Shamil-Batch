@@ -178,3 +178,140 @@ const fetchData = async () => {
 }
 
 fetchData()
+
+// Set, Map, Memoization, recursion, closure, curring
+
+// Array -> Collection of elements.
+
+// Set -> Collection of unique elements. -> Set Constructor
+
+const set = new Set()
+
+set.add(20)
+set.add(20)
+set.add(30)
+set.add(40)
+
+const is_exist = set.has(300)
+
+const len = set.size
+
+set.delete(20)
+
+console.log(len);
+
+console.log(is_exist);
+
+// set.clear()
+
+console.log(set);
+
+console.log(Array.from(set));
+
+// Map -> Collection of key value pairs. -> Map Constructor
+
+const map = new Map()
+
+map.set("name", "Shamil")
+map.set("age", 21)
+
+const length = map.size
+
+const exist = map.has("name")
+
+map.delete("name")
+
+const a = map.get("age")
+
+console.log(a);
+
+map.clear()
+console.log(length);
+
+console.log(exist);
+
+console.log(map);
+
+// Memoization -> Optimization technique -> to store the result of a function for future use.
+const m = new Map()
+
+const sumOfNumbers = (a, b) => {
+    const key = a + "," + b
+    if (m.has(key)) {
+        console.log("Fetching from cache...");
+        return m.get(key)
+    }
+    console.log("Calculating...");
+    const s = a + b
+    m.set(key, s)
+    return s
+}
+
+console.log(sumOfNumbers(102,0));
+console.log(sumOfNumbers(10,20));
+console.log(sumOfNumbers(10,20));
+console.log(sumOfNumbers(10,20));
+console.log(sumOfNumbers(10, 20));
+
+// application
+
+const cache = new Map()
+
+const getUserInfo = async (user_id) => {
+    try {
+        if (cache.has(user_id)) {
+            return cache.get(user_id)
+        }
+        console.log("Fetching data from url");
+        const response = await fetch(`https://dummyjson.com/users/${user_id}`)
+        const res = await response.json()
+        cache.set(user_id, res)
+        return res
+    } catch (error) {
+        console.log(error);   
+    }
+}
+
+const handleApi = async () => {
+    let user = await getUserInfo(2)
+    console.log(user);
+    user = await getUserInfo(2)
+    console.log(user);
+    user = await getUserInfo(2)
+    console.log(user);
+    user = await getUserInfo(2)
+    console.log(user);
+    user = await getUserInfo(2)
+    console.log(user);
+    user = await getUserInfo(2)
+    console.log(user);
+    user = await getUserInfo(2)
+    console.log(user);
+    user = await getUserInfo(2)
+    console.log(user);
+    user = await getUserInfo(2)
+    console.log(user);
+    user = await getUserInfo(2)
+    console.log(user);
+    user = await getUserInfo(2)
+    console.log(user);
+    user = await getUserInfo(2)
+    console.log(user);
+    user = await getUserInfo(2)
+    console.log(user);
+    user = await getUserInfo(2)
+    console.log(user);
+    user = await getUserInfo(2)
+    console.log(user);
+    user = await getUserInfo(2)
+    console.log(user);
+    user = await getUserInfo(2)
+    console.log(user);
+    user = await getUserInfo(2)
+    console.log(user);
+    user = await getUserInfo(2)
+    console.log(user);
+    console.log("Completed");
+}
+
+handleApi()
